@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhml"
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
@@ -33,7 +33,7 @@ body {
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/">Système de gestion des athlètes</a>
+				<a class="navbar-brand" href="/">Système de gestion des sports</a>
 				<a class="navbar-brand" href="/sports">Système de gestion des sports</a>
 
 			</div>
@@ -43,20 +43,27 @@ body {
 
 	<div class="container special">
 
-		<h2 class="h2">Modification d'un athlète</h2>
+		<h2 class="h2">Modification d'un sport</h2>
 		<div>
 			<form method="post"
-				th:action="@{/saveAthlete}" th:object="${athlete}">
+				th:action="@{/saveSport}" th:object="${sport}">
 				<div class="form-group">
 					<input
 						type="hidden" th:field="*{id}" class="form-control">
 				</div>
 				<div class="form-group">
-					<label for="prenomInput">Prénom</label>
+					<label for="nomInput">Nom</label>
 					<input
-						type="text" th:field="*{prenom}" class="form-control" id="prenomInputInput"
-						aria-describedby="prenomInputHelp" placeholder="Saisir le prénom"> <small
-						id="prenomInputHelp" class="form-text text-muted">Merci d'écrire le prénom de l'athlète.</small>
+						type="text" th:field="*{nom}" class="form-control" id="nomInput"
+						aria-describedby="nomInputHelp" placeholder="Saisir le nom"> <small
+						id="nomInputInputHelp" class="form-text text-muted">Merci d'écrire le nom du sport.</small>
+				</div>
+				<div class="form-group">
+					<label for="descriptifInput">Descriptif</label>
+					<input
+							type="text" th:field="*{descriptif}" class="form-control" id="descriptifInput"
+							aria-describedby="descriptifInputHelp" placeholder="Saisir le descriptif"> <small
+						id="descriptifInputHelp" class="form-text text-muted">Merci d'écrire le descriptif du sport.</small>
 				</div>
 
 				
