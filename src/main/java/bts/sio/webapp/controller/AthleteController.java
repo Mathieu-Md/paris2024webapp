@@ -29,7 +29,7 @@ public class AthleteController {
     public String home(Model model) {
         Iterable<Athlete> listAthletes = athleteservice.getAthletes();
         model.addAttribute("athletes", listAthletes);
-        return "home";
+        return "athlete/home";
     }
 
     @GetMapping("/createAthlete")
