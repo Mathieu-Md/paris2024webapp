@@ -33,7 +33,7 @@ body {
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/">Système de gestion des athlètes</a>
+				<a class="navbar-brand" href="/">Système de gestion des sites</a>
 				<a class="navbar-brand" href="/sports">Système de gestion des sports</a>
 				<a class="navbar-brand" href="/sites">Système de gestion des sites</a>
 			</div>
@@ -43,33 +43,38 @@ body {
 
 	<div class="container special">
 
-		<h2 class="h2">Ajout d'un nouvel athlete</h2>
+		<h2 class="h2">Ajout d'un nouveau site</h2>
 		<div>
 			<form method="post"
-				th:action="@{/saveAthlete}" th:object="${athlete}">
-				<div class="form-group">
-					<label for="prenomInput">Prénom</label>
-					<input
-						type="text" th:field="*{prenom}" class="form-control" id="firstNameInput"
-						aria-describedby="prenomHelp" placeholder="Saisir le prénom"> <small
-						id="prenomHelp" class="form-text text-muted">Merci d'écrire le prénom de l'athlète.</small>
-				</div>
+				th:action="@{/saveSite}" th:object="${site}">
 				<div class="form-group">
 					<label for="nomInput">Nom</label>
 					<input
 						type="text" th:field="*{nom}" class="form-control" id="nomInput"
 						aria-describedby="nomHelp" placeholder="Saisir le nom"> <small
-						id="nomHelp" class="form-text text-muted">Merci d'écrire le nom de l'athlète.</small>
+						id="nomHelp" class="form-text text-muted">Merci d'écrire le nom du site.</small>
 				</div>
-
 				<div class="form-group">
-					<label for="pays">Pays :</label>
-					<select id="pays" class="form-control" th:field="*{pays.id}">
-						<option value="">Sélectionnez un pays</option>
-						<option th:each="pays : ${listPays}" th:value="${pays.id}" th:text="${pays.nom}"></option>
-					</select>
+					<label for="rueInput">Rue</label>
+					<input
+							type="text" th:field="*{rue}" class="form-control" id="rueInput"
+							aria-describedby="rueHelp" placeholder="Saisir la rue"> <small
+						id="rueHelp" class="form-text text-muted">Merci d'écrire la rue du site.</small>
 				</div>
-
+				<div class="form-group">
+					<label for="villeInput">Ville</label>
+					<input
+							type="text" th:field="*{ville}" class="form-control" id="villeInput"
+							aria-describedby="villeHelp" placeholder="Saisir la ville"> <small
+						id="villeHelp" class="form-text text-muted">Merci d'écrire la ville du site.</small>
+				</div>
+				<div class="form-group">
+					<label for="CPInput">CP</label>
+					<input
+							type="text" th:field="*{CP}" class="form-control" id="CPInput"
+							aria-describedby="CPHelp" placeholder="Saisir le code postal"> <small
+						id="CPHelp" class="form-text text-muted">Merci d'écrire le code postal du site.</small>
+				</div>
 
 				<button type="submit" class="btn btn-primary">Créer</button>
 			</form>

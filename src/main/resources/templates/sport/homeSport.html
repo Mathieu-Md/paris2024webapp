@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhml"
+<html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
@@ -34,6 +34,7 @@
 			<div class="navbar-header">
 				<a class="navbar-brand" href="/">Système de gestion des athlètes</a>
 				<a class="navbar-brand" href="/sports">Système de gestion des sports</a>
+				<a class="navbar-brand" href="/sites">Système de gestion des sites</a>
 			</div>
 		</div>
 	</nav>
@@ -47,6 +48,7 @@
 					<tr>
 						<th>Nom</th>
 						<th>Descriptif</th>
+						<th>Site</th>
 						<th>Action</th>
 
 					</tr>
@@ -58,6 +60,8 @@
 					<tr th:each="sport: ${sports}">
 						<td><span th:text="${sport.nom}"> Nom </span></td>
 						<td><span th:text="${sport.descriptif}"> Nom </span></td>
+						<td><span th:text="${sport.site.nom}"> Site </span></td>
+
 
 						<td>
 							<a th:href="@{/updateSport/{id}(id=${sport.id})}"><button class="btn btn-info">Modifier</button></a>
