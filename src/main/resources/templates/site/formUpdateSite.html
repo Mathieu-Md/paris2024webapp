@@ -55,7 +55,7 @@ body {
 					<label for="nomInput">Nom</label>
 					<input
 						type="text" th:field="*{nom}" class="form-control" id="nomInput"
-						aria-describedby="nomInputHelp" placeholder="Saisir le nom"> <small
+						aria-describedby="nomInputHelp" placeholder="Saisir le nom"  onblur="console.log(this.value)"> <small
 						id="nomInputHelp" class="form-text text-muted">Merci d'écrire le nom du site.</small>
 				</div>
 				<div class="form-group">

@@ -12,7 +12,7 @@
     <artifactId>paris2024api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>paris2024api</name>
+    <name>paris2024webapp</name>
     <description>paris2024api</description>
     <url/>
     <licenses>
