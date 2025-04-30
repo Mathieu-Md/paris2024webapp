@@ -1,1 +1,1 @@
-Accès interne : http://localhost:9009/
+Accès local : http://localhost:9009/
