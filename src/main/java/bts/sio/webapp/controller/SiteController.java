@@ -59,10 +59,10 @@ public class SiteController {
     @PostMapping("/saveSite")
     public ModelAndView saveSite(@ModelAttribute Site site) {
         System.out.println("controller save=" + site.getNom());
-        if(site.getId() != null) {
-            Site current = siteservice.getSite(site.getId());
-            site.setNom(current.getNom());
-        }
+//        if(site.getId() != null) {
+//            Site current = siteservice.getSite(site.getId());
+//            site.setNom(current.getNom());
+//        }
         siteservice.saveSite(site);
         return new ModelAndView("redirect:/sites");
     }

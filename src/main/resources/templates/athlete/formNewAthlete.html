@@ -43,7 +43,7 @@ body {
 
 	<div class="container special">
 
-		<h2 class="h2">Ajout d'un nouvel athlete</h2>
+		<h2 class="h2">Ajout d'un nouvel athlète</h2>
 		<div>
 			<form method="post"
 				th:action="@{/saveAthlete}" th:object="${athlete}">
@@ -63,6 +63,15 @@ body {
 				</div>
 
 				<div class="form-group">
+					<label for="dateNaissanceInput">Date de naissance</label>
+					<input
+							type="date" th:field="*{dateNaiss}" class="form-control" id="dateNaissanceInput"
+							aria-describedby="dateNaissanceHelp"> <small
+						id="dateNaissanceHelp" class="form-text text-muted">Merci de saisir la date de naissance de l'athlète.</small>
+
+				</div>
+
+				<div class="form-group">
 					<label for="pays">Pays :</label>
 					<select id="pays" class="form-control" th:field="*{pays.id}">
 						<option value="">Sélectionnez un pays</option>
@@ -70,6 +79,13 @@ body {
 					</select>
 				</div>
 
+				<div class="form-group">
+					<label for="sport">Sport :</label>
+					<select id="sport" class="form-control" th:field="*{sport.id}">
+						<option value="">Sélectionnez un sport</option>
+						<option th:each="sport : ${listSport}" th:value="${sport.id}" th:text="${sport.nom}"></option>
+					</select>
+				</div>
 
 				<button type="submit" class="btn btn-primary">Créer</button>
 			</form>

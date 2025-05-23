@@ -32,7 +32,7 @@ public class AthleteService {
         athlete.setNom(athlete.getNom().toUpperCase());
 
         if(athlete.getId() == null) {
-            // If id is null, then it is a new employee.
+            // If id is null, then it is a new athlete.
             savedAthlete = athleteProxy.createAthlete(athlete);
         } else {
             savedAthlete = athleteProxy.updateAthlete(athlete);

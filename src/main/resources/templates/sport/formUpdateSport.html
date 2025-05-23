@@ -65,6 +65,13 @@ body {
 							aria-describedby="descriptifInputHelp" placeholder="Saisir le descriptif"> <small
 						id="descriptifInputHelp" class="form-text text-muted">Merci d'écrire le descriptif du sport.</small>
 				</div>
+				<div class="form-group">
+					<label for="site">Site :</label>
+					<select id="site" class="form-control" th:field="*{site.id}">
+						<option value="">Sélectionnez un site</option>
+						<option th:each="site : ${listSites}" th:value="${site.id}" th:text="${site.nom}"></option>
+					</select>
+				</div>
 
 				
 				<button type="submit" class="btn btn-primary">Modifier</button>

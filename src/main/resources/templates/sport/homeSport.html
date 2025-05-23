@@ -59,8 +59,9 @@
 					</tr>
 					<tr th:each="sport: ${sports}">
 						<td><span th:text="${sport.nom}"> Nom </span></td>
-						<td><span th:text="${sport.descriptif}"> Nom </span></td>
-						<td><span th:text="${sport.site.nom}"> Site </span></td>
+						<td><span th:text="${sport.descriptif}"> Descriptif </span></td>
+<!--						<td><span th:text="${sport.site.nom}"> Site </span></td>-->
+						<td><span th:text="${sport.site != null ? sport.site.nom : 'Site inconnu'}"></span></td>
 
 
 						<td>

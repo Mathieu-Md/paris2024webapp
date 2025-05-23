@@ -62,6 +62,14 @@
                     id="descriptifHelp" class="form-text text-muted">Merci d'écrire la description du sport.</small>
             </div>
 
+            <div class="form-group">
+                <label for="site">Site :</label>
+                <select id="site" class="form-control" th:field="*{site.id}">
+                    <option value="">Sélectionnez un site</option>
+                    <option th:each="site : ${listSites}" th:value="${site.id}" th:text="${site.nom}"></option>
+                </select>
+            </div>
+
             <button type="submit" class="btn btn-primary">Créer</button>
         </form>
     </div>

@@ -1,5 +1,6 @@
 package bts.sio.webapp.controller;
 
+import bts.sio.webapp.model.Site;
 import bts.sio.webapp.model.Sport;
 import bts.sio.webapp.model.Pays;
 import bts.sio.webapp.service.SportService;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
-
+import bts.sio.webapp.service.SiteService;
 @Data
 @Controller
 public class SportController {
@@ -24,6 +25,9 @@ public class SportController {
 
     @Autowired
     private PaysService paysService;
+
+    @Autowired
+    private SiteService siteService;
 
     @GetMapping("/sports")
     public String home(Model model) {
@@ -37,8 +41,8 @@ public class SportController {
         Sport a = new Sport();
         model.addAttribute("sport", a);
 
-        Iterable<Pays> listPays = paysService.getLesPays();
-        model.addAttribute("listPays", listPays);
+        Iterable<Site> listSites = siteService.getSites();
+        model.addAttribute("listSites", listSites);
 
         return "sport/formNewSport";
     }
@@ -47,6 +51,10 @@ public class SportController {
     public String updateSport(@PathVariable("id") final int id, Model model) {
         Sport a = sportservice.getSport(id);
         model.addAttribute("sport", a);
+
+        Iterable<Site> listSites = siteService.getSites();
+        model.addAttribute("listSites", listSites);
+
         return "sport/formUpdateSport";
     }
 
